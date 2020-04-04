@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Example;
+package hotel.Models;
 
-import hotel.Bin.Model;
+import hotel.Lib.Model;
 
 /**
  *
  * @author Orics
  */
-public class Exp_Model extends Model{
-    public String getData(){
-        return "data";
-    }
+public class LeftPanel_Model extends Model{
+    
 }

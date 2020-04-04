@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Bin;
+package hotel.Lib;
 
 /**
  *
@@ -19,6 +19,10 @@ public abstract class Controller {
 
     public Model getModel() {
         return model;
+    }
+    
+    public Controller(){
+        initEvents();
     }
     
     protected abstract void initEvents();

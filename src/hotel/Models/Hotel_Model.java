@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Bin;
+package hotel.Models;
 
-import javax.swing.JPanel;
+import hotel.Lib.Model;
 
 /**
  *
  * @author Orics
  */
-public abstract class View extends JPanel{
-    public abstract void load(Model model);   
+public class Hotel_Model extends Model{
+    
 }

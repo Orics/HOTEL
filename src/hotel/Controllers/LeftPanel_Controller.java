@@ -3,25 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Example;
+package hotel.Controllers;
 
-import hotel.Bin.Controller;
+import hotel.Lib.Controller;
+import hotel.Models.LeftPanel_Model;
+import hotel.Views.LeftPanel_View;
 
 /**
  *
  * @author Orics
  */
-public class Exp_Controller extends Controller{
+public class LeftPanel_Controller extends Controller{
 
-    public Exp_Controller() {
-        this.view = new Exp_View();
-        this.model = new Exp_Model();
+    public LeftPanel_Controller() {
+        this.model = new LeftPanel_Model();
+        this.view = new LeftPanel_View();
         this.view.load(model);
     }
     
     @Override
     protected void initEvents() {
-        // create for Controls
+        
     }
     
 }

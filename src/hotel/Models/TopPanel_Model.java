@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Bin;
+package hotel.Models;
+
+import hotel.Lib.Model;
 
 /**
  *
  * @author Orics
  */
-public class Model {
+public class TopPanel_Model extends Model{
     
 }
