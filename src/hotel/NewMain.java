@@ -6,6 +6,7 @@
 package hotel;
 
 import hotel.Models.DataObjects.Employee;
+import hotel.Models.DataObjects.Role;
 
 /**
  *
@@ -17,8 +18,10 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Employee e = Employee.getEmployee("10000");
-        e.insert();
+        Employee e = Employee.getEmployee("1");
+        e.update();
+        System.out.println(" ");
     }
+    
     
 }

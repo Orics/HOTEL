@@ -56,3 +56,6 @@ EXEC pro_InsertEmployee
 	@gender = 'Male', 
 	@phone = '0987654321', 
 	@email = 'email@gmail.com';
+
+
+----------------------------------------------------------------

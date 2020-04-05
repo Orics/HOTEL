@@ -22,9 +22,9 @@ public class SQLConnection {
 
     public static Connection getConnection(){
         try {
-            connectString = "jdbc:sqlserver://localhost\\DESKTOP-EJBMRCJ:1433;databaseName=hotel";
+            connectString = "jdbc:sqlserver://localhost\\DESKTOP-R9OBGBB:1433;databaseName=Hotel";
             username = "sa";
-            password = "123456";
+            password = "123123";
             return DriverManager.getConnection(connectString, username, password);
         } catch (SQLException ex) {
             System.err.println("Connect Failed");
