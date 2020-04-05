@@ -18,9 +18,8 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Employee e = Employee.getEmployee("1");
-        e.update();
-        System.out.println(" ");
+        Role r = new Role();
+        Role.getRole("1");
     }
     
     
