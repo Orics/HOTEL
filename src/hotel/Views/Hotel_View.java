@@ -5,11 +5,11 @@
  */
 package hotel.Views;
 
-import hotel.Lib.Model;
-import hotel.Lib.View;
+import hotel.Models.Model;
 import hotel.Controllers.ContentPanel_Controller;
 import hotel.Controllers.LeftPanel_Controller;
 import hotel.Controllers.TopPanel_Controller;
+import hotel.Models.DataObjects.Employee;
 import java.awt.Color;
 
 /**
@@ -39,4 +39,8 @@ public class Hotel_View extends View{
         
     }
     
+    public void loadEmployee(Employee emp){
+        this.topPanelView.getEmpName().setText(emp.getEmpName());
+        this.topPanelView.getEmpRole().setText(emp.getRoleID());
+    }
 }

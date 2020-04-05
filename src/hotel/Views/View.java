@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Lib;
+package hotel.Views;
 
+import hotel.Models.Model;
 import javax.swing.JPanel;
 
 /**

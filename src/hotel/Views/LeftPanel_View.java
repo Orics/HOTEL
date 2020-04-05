@@ -5,9 +5,8 @@
  */
 package hotel.Views;
 
-import hotel.Lib.Model;
+import hotel.Models.Model;
 import hotel.Lib.TabLabel;
-import hotel.Lib.View;
 import java.awt.Color;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;

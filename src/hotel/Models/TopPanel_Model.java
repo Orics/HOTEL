@@ -5,8 +5,6 @@
  */
 package hotel.Models;
 
-import hotel.Lib.Model;
-
 /**
  *
  * @author Orics

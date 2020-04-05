@@ -5,7 +5,6 @@
  */
 package hotel.Controllers;
 
-import hotel.Lib.Controller;
 import hotel.Models.ContentPanel_Model;
 import hotel.Views.ContentPanel_View;
 

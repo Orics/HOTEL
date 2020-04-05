@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotel.Lib;
+package hotel.Controllers;
+
+import hotel.Views.View;
+import hotel.Models.Model;
 
 /**
  *
@@ -22,7 +25,7 @@ public abstract class Controller {
     }
     
     public Controller(){
-        initEvents();
+        
     }
     
     protected abstract void initEvents();
