@@ -49,7 +49,7 @@ public class RoomChange {
         this.OldResDetailID = OldResDetailID;
     }
 
-    public void setNewResDetailID(String NewResDetail) {
+    public void setNewResDetailID(String NewResDetailID) {
         this.NewResDetailID = NewResDetailID;
     }
 
@@ -68,8 +68,8 @@ public class RoomChange {
             while(rs.next()){
                 rc = new RoomChange();
                 rc.setRoomChangeID(rs.getString("RoomChangeID"));
-                rc.setOldResDetailID(rs.getString("OldResDetailID"));
                 rc.setNewResDetailID(rs.getString("NewResDetailID"));
+                rc.setOldResDetailID(rs.getString("OldResDetailID"));
                 rc.setReason(rs.getString("Reason"));
                 return rc;
             }  
@@ -91,8 +91,8 @@ public class RoomChange {
             Connection conn = SQLConnection.getConnection();
             String sql = "{call pro_InsertRoomChange(?,?,?)}";
             CallableStatement cstmt = conn.prepareCall(sql);
-            cstmt.setString(1, this.OldResDetailID);
-            cstmt.setString(2, this.NewResDetailID);
+            cstmt.setString(1, this.NewResDetailID);
+            cstmt.setString(2, this.OldResDetailID);
             cstmt.setString(3, this.Reason);
             
             ResultSet rs = cstmt.executeQuery();
@@ -108,7 +108,7 @@ public class RoomChange {
     public boolean update(){
         try {
             Connection conn = SQLConnection.getConnection();
-            String sql = "update RoomChange set RoomChangeID=?, OldResDetailID=?, NewResDetailID=?, Reason=?";
+            String sql = "update RoomChange set  OldResDetailID=?, NewResDetailID=?, Reason=? where RoomChangeID=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, this.RoomChangeID);
             pstmt.setString(2, this.OldResDetailID);

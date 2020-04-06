@@ -20,55 +20,55 @@ import java.util.logging.Logger;
  * @author ADMIN
  */
 public class Reg_Reservation {
-    private String RegRes;
+    private String RegResID;
     private Date ApplyTime;
-    private String HoldingDateRate;
+    private String HoldingDayRate;
     private String HoldingDay;
 
-    public void setRegRes(String RegRes) {
-        this.RegRes = RegRes;
+    public void setRegResID(String RegResID) {
+        this.RegResID = RegResID;
     }
 
     public void setApplyTime(Date ApplyTime) {
         this.ApplyTime = ApplyTime;
     }
 
-    public void setHoldingDateRate(String HoldingDateRate) {
-        this.HoldingDateRate = HoldingDateRate;
+    public void setHoldingDayRate(String HoldingDayRate) {
+        this.HoldingDayRate = HoldingDayRate;
     }
 
     public void setHoldingDay(String HoldingDay) {
         this.HoldingDay = HoldingDay;
     }
 
-    public String getRegRes() {
-        return RegRes;
+    public String getRegResID() {
+        return RegResID;
     }
 
     public Date getApplyTime() {
         return ApplyTime;
     }
 
-    public String getHoldingDateRate() {
-        return HoldingDateRate;
+    public String getHoldingDayRate() {
+        return HoldingDayRate;
     }
 
     public String getHoldingDay() {
         return HoldingDay;
     }
-        public static Reg_Reservation getReg_Reservation(String RegRes){
+        public static Reg_Reservation getReg_Reservation(String RegResID){
         Reg_Reservation rr = null;        
         try {
             Connection conn = SQLConnection.getConnection();  
-            String sql = "select * from Reg_Reservation where RegRes = ?";
+            String sql = "select * from Reg_Reservation where RegResID = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, RegRes);
+            pstmt.setString(1, RegResID);
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 rr = new Reg_Reservation();
-                rr.setRegRes(rs.getString("RegRes"));
+                rr.setRegResID(rs.getString("RegResID"));
                 rr.setApplyTime(rs.getDate("ApplyTime"));
-                rr.setHoldingDateRate(rs.getString("HoldingDateRate"));
+                rr.setHoldingDayRate(rs.getString("HoldingDayRate"));
                 rr.setHoldingDay(rs.getString("HoldingDay"));
                   
                 return rr;
@@ -92,7 +92,7 @@ public class Reg_Reservation {
             String sql = "{call pro_InsertReg_Reservation(?,?,?)}";
             CallableStatement cstmt = conn.prepareCall(sql);
             cstmt.setDate(1, this.ApplyTime);
-            cstmt.setString(2, this.HoldingDateRate);
+            cstmt.setString(2, this.HoldingDayRate);
             cstmt.setString(3, this.HoldingDay);
             ResultSet rs = cstmt.executeQuery();
             while(rs.next()){
@@ -107,12 +107,12 @@ public class Reg_Reservation {
     public boolean update(){
         try {
             Connection conn = SQLConnection.getConnection();
-            String sql = "update Reg_Reservation set RegRes=?, ApplyTime=?, HoldingDayRate=?, HoldingDay=?";
+            String sql = "update Reg_Reservation set ApplyTime=?, HoldingDayRate=?, HoldingDay=? Where RegResID=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setDate(1, this.ApplyTime);
-            pstmt.setString(2, this.HoldingDateRate);
+            pstmt.setString(2, this.HoldingDayRate);
             pstmt.setString(3, this.HoldingDay);
-            pstmt.setString(4, this.RegRes);
+            pstmt.setString(4, this.RegResID);
             
             
             if(pstmt.executeUpdate()>0){
@@ -127,9 +127,9 @@ public class Reg_Reservation {
     public boolean delete(){
         try {
             Connection conn = SQLConnection.getConnection();
-            String sql = "delete from Reg_Reservation where RegRes=?";
+            String sql = "delete from Reg_Reservation where RegResID=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, RegRes);
+            pstmt.setString(1, RegResID);
             if(pstmt.executeUpdate()>0){
                 return true;
             }

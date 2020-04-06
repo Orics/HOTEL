@@ -20,8 +20,7 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Reg_Reservation r = new Reg_Reservation();
-        Reg_Reservation.getReg_Reservation("2");
-        
+        RoomChange r = RoomChange.getRoomChange("1");
+        r.insert();
     }   
 }
