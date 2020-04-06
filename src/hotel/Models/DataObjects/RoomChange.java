@@ -91,8 +91,8 @@ public class RoomChange {
             Connection conn = SQLConnection.getConnection();
             String sql = "{call pro_InsertRoomChange(?,?,?)}";
             CallableStatement cstmt = conn.prepareCall(sql);
-            cstmt.setString(1, this.NewResDetailID);
-            cstmt.setString(2, this.OldResDetailID);
+            cstmt.setString(1, this.OldResDetailID);
+            cstmt.setString(2, this.NewResDetailID);
             cstmt.setString(3, this.Reason);
             
             ResultSet rs = cstmt.executeQuery();

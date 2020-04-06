@@ -5,8 +5,10 @@
  */
 package hotel;
 
-import hotel.Models.DataObjects.Employee;
+import hotel.Models.DataObjects.Reg_Reservation;
 import hotel.Models.DataObjects.Role;
+import hotel.Models.DataObjects.Room;
+import hotel.Models.DataObjects.RoomChange;
 
 /**
  *
@@ -18,9 +20,8 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Role r = new Role();
-        Role.getRole("1");
-    }
-    
-    
+        Reg_Reservation r = new Reg_Reservation();
+        Reg_Reservation.getReg_Reservation("2");
+        
+    }   
 }

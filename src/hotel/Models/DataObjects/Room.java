@@ -127,7 +127,7 @@ public class Room {
     public boolean delete(){
         try {
             Connection conn = SQLConnection.getConnection();
-            String sql = "delete from Employee where RoomID=?";
+            String sql = "delete from Room where RoomID=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, RoomID);
             if(pstmt.executeUpdate()>0){
